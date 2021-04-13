@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'com.shash'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+apply plugin: 'application'
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+    flatDir{
+        dirs 'libs'
+    }
+}
+
+mainClassName = 'com.fortune.Main'
+
+//applicationDefaultJvmArgs = ["-XstartOnFirstThread"]
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile files('libs/stdlib-package.jar')
+    implementation 'org.jetbrains:annotations:15.0'
+}
